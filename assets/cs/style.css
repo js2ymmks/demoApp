@@ -11,9 +11,9 @@ body {
   position: relative;
 }
 
-.app_wrapper_header,
-.app_wrapper_main,
-.app_wrapper_footer {
+.app_wrapper_header img,
+.app_wrapper_main img,
+.app_wrapper_footer img {
   max-width: 375px;
   width: 100%;
 }
