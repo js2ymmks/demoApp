@@ -12,7 +12,7 @@ body {
 }
 
 .app_wrapper_header,
-.app_wrapper_main,
+.app_wrapper_main img,
 .app_wrapper_footer {
   max-width: 375x;
   width: 100%;
