@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.app_wrapper {
+  max-width: 412px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.app_wrapper img {
+  width: 100%;
+  /* 親要素に対して幅100%指定 */
+  height: auto;
+  vertical-align: bottom;
+}
+
+.app_wrapper_header,
+.app_wrapper_main,
+.app_wrapper_footer {
+  max-width: 412px;
+  width: 100%;
+}
+
+.app_wrapper_main {
+  position: absolute;
+}
+
+.app_wrapper_header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.app_wrapper_footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}
+
+/* .app-main {
+  position: fixed;
+  top: 0;
+} */
