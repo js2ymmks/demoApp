@@ -11,9 +11,7 @@ body {
   position: relative;
 }
 
-.app_wrapper_header img,
-.app_wrapper_main img,
-.app_wrapper_footer img {
+.app_wrapper img {
   max-width: 375px;
   width: 100%;
 }
@@ -34,7 +32,7 @@ body {
   z-index: 10;
 } 
 
-.app_wrapper_footer img {
+.app_wrapper_footer {
   vertical-align: bottom;
 } 
 
