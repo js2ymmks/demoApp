@@ -16,8 +16,21 @@ body {
   width: 100%;
 }
 
+.app_wrapper_header,
+.app_wrapper_main,
+.app_wrapper_footer {
+  max-width: 375px;
+  width: 100%;
+}
+
 .app_wrapper_main {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
+  top: 0;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  z-index: 50;
 }
 
 .app_wrapper_header {
