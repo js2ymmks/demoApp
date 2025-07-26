@@ -14,6 +14,7 @@
 
   if (!storedData) {
     alert("セッションストレージに ecoHeater のデータが存在しません。");
+    window.location.href = '../index.html';
   } else {
     const parsedEcoHeater = JSON.parse(storedData);
     document.getElementById("sample").innerHTML = 
