@@ -1,44 +1,81 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iPhone SE デモアプリ</title>
-  <link rel="stylesheet" href="assets/cs/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/elements-potision.css">
   <script src="../assets/js/json.js"></script>
   <script src="../assets/js/script.js" defer></script>
 </head>
 
 <body>
-  <div class="app_wrapper">
-    <!-- ヘッダー -->
-    <header class="app_wrapper_header">
-      <img src="../assets/img/header.png" alt="header">
+  <div class="app-wrapper">
+    <header>
     </header>
 
-    <!-- メイン -->
-    <main class="app_wrapper_main">
-      <!-- <img src="../assets/img/main-app.svg" alt="main"> -->
-      <img src="../assets/img/main-app-02.png" alt="main">
-      <a href="./settings/">ここをクリック</a>
-
-
+    <main class="app-wrapper-main">
+        <div id="prevBtn"></div>
+        <div id="nextBtn"></div>
+        <div id="tankTab"></div>
+        <div id="bathTab"></div>
+        <div id="shwrTab"></div>
+        <img src="../assets/img/tank.png" alt="tank">
+        <img src="../assets/img/bath.png" alt="bath">
+        <img src="../assets/img/shower.png" alt="shower">
     </main>
 
-    <!-- フッター -->
-    <footer class="app_wrapper_footer">
-      <!-- <img src="../assets/img/foooter-app.svg" alt="footer"> -->
-      <img src="../assets/img/foooter.png" alt="footer">
+    <footer>
     </footer>
+
   </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.app-wrapper-main img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const tankTab = document.getElementById('tankTab');
+    const bathTab = document.getElementById('bathTab');
+    const shwrTab = document.getElementById('shwrTab');
+
+    const showSlide = (index) => {
+      images.forEach((img, i) => {
+        img.style.display = i === index ? 'block' : 'none';
+      });
+
+      // ボタン表示制御
+      prevBtn.style.display = index === 0 ? 'none' : 'block';
+      nextBtn.style.display = index === images.length - 1 ? 'none' : 'block';
+    };
+
+    const nextSlide = () => {
+      currentIndex = Math.min(currentIndex + 1, images.length - 1);
+      showSlide(currentIndex);
+    };
+
+    const prevSlide = () => {
+      currentIndex = Math.max(currentIndex - 1, 0);
+      showSlide(currentIndex);
+    };
+
+    const setIndex = (index) => {
+      currentIndex = index;
+      showSlide(currentIndex);
+    };
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    tankTab.addEventListener('click', () => setIndex(0));
+    bathTab.addEventListener('click', () => setIndex(1));
+    shwrTab.addEventListener('click', () => setIndex(2));
+
+    showSlide(currentIndex);
+  });
+</script>
+
 </body>
 
 </html>
-
-<!-- モーダル -->
-<!-- <div id="modal-overlay">
-      <div id="modal-dialog">
-        <p id="modal-message">メッセージ</p>
-        <button onclick="hideModal()">閉じる</button>
-      </div> -->
