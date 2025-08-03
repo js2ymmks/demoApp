@@ -41,4 +41,14 @@
   cursor: pointer;
 }
 
+#bathAutoBtn{
+  position: absolute;
+  top: 440px;
+  left: 25px;
+  width: 325px;
+  height: 50px;
+  cursor: pointer;
+}
+
+
   /* background-color: cadetblue; */

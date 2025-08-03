@@ -8,18 +8,18 @@ const ecoCuteData = {
       "status": "ready",
       "priority": "bath"
     },
-    "energySaving": {
+    "baseUrl": "../assets/img/",
+    "tank": {
       "enabled": true,
       "level": "high"
     },
-    "baseUrl": "../assets/img/",
     "bath": {
-      "autoMode": "ope-button-01-off.svg",
+      "bathAutoBtn": "btn-bath-auto_on.png",
       "reheatMode": "ope-button-02-off.svg",
-      "pikariyuMode": "ope-button-03-off.svg"
+      "kirariyuMode": "ope-button-03-off.svg"
     },
   }
 
 
   // ecoHeater オブジェクトを JSON 文字列に変換して保存
-sessionStorage.setItem("ecoCuteData", JSON.stringify(ecoCuteData));
+sessionStorage.setItem("demoAppData", JSON.stringify(ecoCuteData));

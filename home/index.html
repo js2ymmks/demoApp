@@ -17,64 +17,70 @@
     </header>
 
     <main class="app-wrapper-main">
-        <div id="prevBtn"></div>
-        <div id="nextBtn"></div>
-        <div id="tankTab"></div>
-        <div id="bathTab"></div>
-        <div id="shwrTab"></div>
-        <img src="../assets/img/tank.png" alt="tank">
-        <img src="../assets/img/bath.png" alt="bath">
-        <img src="../assets/img/shower.png" alt="shower">
+      <div id="prevBtn"></div>
+      <div id="nextBtn"></div>
+      <div id="tankTab"></div>
+      <div id="bathTab"></div>
+      <div id="shwrTab"></div>
+      <img class="slide" src="../assets/img/tank.png" alt="tank">
+      <img class="slide" src="../assets/img/bath.png" alt="bath">
+      <img class="slide" src="../assets/img/shower.png" alt="shower">
+
+      <img id="bathAutoBtn">
     </main>
 
     <footer>
     </footer>
 
   </div>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    let currentIndex = 0;
-    const images = document.querySelectorAll('.app-wrapper-main img');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const tankTab = document.getElementById('tankTab');
-    const bathTab = document.getElementById('bathTab');
-    const shwrTab = document.getElementById('shwrTab');
 
-    const showSlide = (index) => {
-      images.forEach((img, i) => {
-        img.style.display = i === index ? 'block' : 'none';
-      });
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('bathAutoBtn').src = getJsonValue('baseUrl') + getJsonValue('bath.bathAutoBtn');
 
-      // ボタン表示制御
-      prevBtn.style.display = index === 0 ? 'none' : 'block';
-      nextBtn.style.display = index === images.length - 1 ? 'none' : 'block';
-    };
 
-    const nextSlide = () => {
-      currentIndex = Math.min(currentIndex + 1, images.length - 1);
+      let currentIndex = 0;
+      const images = document.querySelectorAll('.slide');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const tankTab = document.getElementById('tankTab');
+      const bathTab = document.getElementById('bathTab');
+      const shwrTab = document.getElementById('shwrTab');
+
+      const showSlide = (index) => {
+        images.forEach((img, i) => {
+          img.style.display = i === index ? 'block' : 'none';
+        });
+
+        // ボタン表示制御
+        prevBtn.style.display = index === 0 ? 'none' : 'block';
+        nextBtn.style.display = index === images.length - 1 ? 'none' : 'block';
+      };
+
+      const nextSlide = () => {
+        currentIndex = Math.min(currentIndex + 1, images.length - 1);
+        showSlide(currentIndex);
+      };
+
+      const prevSlide = () => {
+        currentIndex = Math.max(currentIndex - 1, 0);
+        showSlide(currentIndex);
+      };
+
+      const setIndex = (index) => {
+        currentIndex = index;
+        showSlide(currentIndex);
+      };
+
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+      tankTab.addEventListener('click', () => setIndex(0));
+      bathTab.addEventListener('click', () => setIndex(1));
+      shwrTab.addEventListener('click', () => setIndex(2));
+
       showSlide(currentIndex);
-    };
-
-    const prevSlide = () => {
-      currentIndex = Math.max(currentIndex - 1, 0);
-      showSlide(currentIndex);
-    };
-
-    const setIndex = (index) => {
-      currentIndex = index;
-      showSlide(currentIndex);
-    };
-
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-    tankTab.addEventListener('click', () => setIndex(0));
-    bathTab.addEventListener('click', () => setIndex(1));
-    shwrTab.addEventListener('click', () => setIndex(2));
-
-    showSlide(currentIndex);
-  });
-</script>
+    });
+  </script>
 
 </body>
 
