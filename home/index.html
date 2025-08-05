@@ -92,24 +92,29 @@
       shwrTab.addEventListener('click', () => document.getElementById('bathAutoBtn').src = getJsonValue('baseUrl') + getJsonValue('bath.btnAutoOff'));
 
       showSlide(currentIndex);
+
+
+      document.querySelectorAll('.tab-button').forEach((tab) => {
+        tab.addEventListener('click', function () {
+          const tabName = this.dataset.tabName;
+
+          // GA4 へカスタムイベントを送信
+          gtag('event', 'tab_click', {
+            tab_name: tabName,
+            page_path: window.location.pathname
+          });
+
+          // コンソール確認用（開発中のみ）
+          console.log(`Tab clicked: ${tabName}`);
+        });
+      });
+
+
+
+
     });
   </script>
 
-<script>
-  document.querySelectorAll('.tab-button').forEach((tab) => {
-    tab.addEventListener('click', function () {
-      const tabName = this.dataset.tabName;
-
-      // GA4 へカスタムイベントを送信
-      gtag('event', 'tab_click', {
-        tab_name: tabName,
-        page_path: window.location.pathname
-      });
-
-      // コンソール確認用（開発中のみ）
-      console.log(`Tab clicked: ${tabName}`);
-    });
-  });
-</script></body>
+</body>
 
 </html>
