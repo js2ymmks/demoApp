@@ -28,9 +28,9 @@
     <main class="app-wrapper-main">
       <div id="prevBtn"></div>
       <div id="nextBtn"></div>
-      <div id="tankTab"></div>
-      <div id="bathTab"></div>
-      <div id="shwrTab"></div>
+      <div id="tankTab" class="tab-button"></div>
+      <div id="bathTab" class="tab-button"></div>
+      <div id="shwrTab" class="tab-button"></div>
       <img class="slide" src="../assets/img/tank.png" alt="tank">
       <img class="slide" src="../assets/img/bath.png" alt="bath">
       <img class="slide" src="../assets/img/shower.png" alt="shower">
@@ -95,6 +95,17 @@
     });
   </script>
 
+  <script>
+    document.querySelectorAll('.tab-button').forEach((tab) => {
+      tab.addEventListener('click', function () {
+        const tabName = this.dataset.tabName;
+        gtag('event', 'tab_click', {
+          tab_name: tabName,
+          page_path: window.location.pathname
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
