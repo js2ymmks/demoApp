@@ -14,6 +14,8 @@ const ecoCuteData = {
       "level": "high"
     },
     "bath": {
+      "btnAutoOn": "btn-bath-auto_on.png",
+      "btnAutoOff": "btn-bath-auto_off.png",
       "bathAutoBtn": "btn-bath-auto_on.png",
       "reheatMode": "ope-button-02-off.svg",
       "kirariyuMode": "ope-button-03-off.svg"

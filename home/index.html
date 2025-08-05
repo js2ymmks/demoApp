@@ -5,6 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7G91YF71NW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-7G91YF71NW');
+  </script>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/elements-potision.css">
   <script src="../assets/js/json.js"></script>
@@ -26,6 +35,7 @@
       <img class="slide" src="../assets/img/bath.png" alt="bath">
       <img class="slide" src="../assets/img/shower.png" alt="shower">
 
+      <!-- ふろ自動 ボタン -->
       <img id="bathAutoBtn">
     </main>
 
@@ -36,7 +46,8 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('bathAutoBtn').src = getJsonValue('baseUrl') + getJsonValue('bath.bathAutoBtn');
+      // 初期表示
+      document.getElementById('bathAutoBtn').src = getJsonValue('baseUrl') + getJsonValue('bath.btnAutoOff');
 
 
       let currentIndex = 0;
@@ -76,7 +87,9 @@
       prevBtn.addEventListener('click', prevSlide);
       tankTab.addEventListener('click', () => setIndex(0));
       bathTab.addEventListener('click', () => setIndex(1));
+      bathTab.addEventListener('click', () => document.getElementById('bathAutoBtn').src = getJsonValue('baseUrl') + getJsonValue('bath.btnAutoOn'));
       shwrTab.addEventListener('click', () => setIndex(2));
+      shwrTab.addEventListener('click', () => document.getElementById('bathAutoBtn').src = getJsonValue('baseUrl') + getJsonValue('bath.btnAutoOff'));
 
       showSlide(currentIndex);
     });
