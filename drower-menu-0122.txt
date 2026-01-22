@@ -1,0 +1,43 @@
+<!-- ドロワーメニュー -->
+<div class="offcanvas offcanvas-start position-absolute" tabindex="-1" id="appOffcanvas" aria-labelledby="appOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="appOffcanvasLabel"></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-unstyled ps-0 mt-2">
+      <li class="mb-1">
+        <button class="btn btn-link text-reset d-inline-flex align-items-center text-decoration-none demo-disabled-button">エアコン製品情報</button>
+      </li>
+      <li class="mb-1">
+        <a role="button" id="transition-link" href="../option/" class="btn d-inline-flex align-items-center no-text-btn-effect border border-0 ">オプション機能設定</a>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-link text-reset d-inline-flex align-items-center text-decoration-none demo-disabled-button">アダプター情報</button>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-link text-reset d-inline-flex align-items-center text-decoration-none demo-disabled-button">お知らせ一覧</button>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-link text-reset d-inline-flex align-items-center text-decoration-none demo-disabled-button">チュートリアル</button>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-link text-reset d-inline-flex align-items-center text-decoration-none demo-disabled-button">アプリ情報</button>
+      </li>
+    </ul>
+    <hr>
+    <ul class="list-unstyled ps-0 mt-2">
+      <li class="mb-1">
+        <button class="btn btn-link text-reset d-inline-flex align-items-center text-decoration-none demo-disabled-button pe-0 me-0" style="margin-right: 10px;">取扱説明書</button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path
+            d="M18.4999 2.75C18.4999 2.06 17.9399 1.5 17.2499 1.5H11.7499C11.0599 1.5 10.4999 2.06 10.4999 2.75C10.4999 3.44 11.0599 4 11.7499 4H13.9809L8.61295 9.371C8.12495 9.859 8.12495 10.651 8.61295 11.139L8.71295 11.23C9.20995 11.629 9.92795 11.59 10.3789 11.139L15.9999 5.517V8.25C15.9999 8.94 16.5599 9.5 17.2499 9.5C17.9399 9.5 18.4999 8.94 18.4999 8.25V2.75Z"
+            fill="#4C6EE8" />
+          <path
+            d="M16.5 16.833V11.5H14V15.5C14 15.776 13.776 16 13.5 16H4.5C4.224 16 4 15.776 4 15.5V6.5L4.008 6.41C4.051 6.172 4.259 6 4.5 6H8.5V3.5H3.167C2.246 3.5 1.5 4.246 1.5 5.167V16.833C1.5 17.754 2.246 18.5 3.167 18.5H14.833C15.754 18.5 16.5 17.754 16.5 16.833Z"
+            fill="#4C6EE8" />
+        </svg>
+      </li>
+    </ul>
+  </div>
+</div>
